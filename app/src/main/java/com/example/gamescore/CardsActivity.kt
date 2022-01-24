@@ -68,6 +68,7 @@ class CardsActivity : AppCompatActivity() {
                     2-> {
                         etGracz1.visibility = View.VISIBLE
                         etGracz2.visibility = View.VISIBLE
+                        listaImion.clear()
                         listaImion.add(etGracz1.text.toString())
                         listaImion.add(etGracz2.text.toString())
                     }
@@ -75,6 +76,7 @@ class CardsActivity : AppCompatActivity() {
                         etGracz1.visibility = View.VISIBLE
                         etGracz2.visibility = View.VISIBLE
                         etGracz3.visibility = View.VISIBLE
+                        listaImion.clear()
                         listaImion.add(etGracz1.text.toString())
                         listaImion.add(etGracz2.text.toString())
                         listaImion.add(etGracz3.text.toString())
@@ -84,6 +86,7 @@ class CardsActivity : AppCompatActivity() {
                         etGracz2.visibility = View.VISIBLE
                         etGracz3.visibility = View.VISIBLE
                         etGracz4.visibility = View.VISIBLE
+                        listaImion.clear()
                         listaImion.add(etGracz1.text.toString())
                         listaImion.add(etGracz2.text.toString())
                         listaImion.add(etGracz3.text.toString())
@@ -134,6 +137,7 @@ class CardsActivity : AppCompatActivity() {
         var intent: Intent
         intent = Intent(this, ScoresActivity::class.java)
         intent.putExtra("Imiona",listaImion)
+        intent.putExtra("Ilosc graczy",liczbaGraczyInt)
         startActivity(intent)
 
         //intent = Intent(this,)
