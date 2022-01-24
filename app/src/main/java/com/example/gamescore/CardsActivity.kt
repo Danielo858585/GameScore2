@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Message
+import android.util.Log
 import android.view.View
 import android.view.View.INVISIBLE
 import android.view.View.OnFocusChangeListener
@@ -27,6 +28,7 @@ class CardsActivity : AppCompatActivity() {
     lateinit var zatwierdz: Button
     lateinit var imionaGraczyZatwierdz: Button
     var listaImion : ArrayList<String> = ArrayList()
+    final var TAG : String = "CARDSActivity SPRAWDZENIE"
     override fun onCreate(savedInstanceState: Bundle?) {
 
 
@@ -45,7 +47,7 @@ class CardsActivity : AppCompatActivity() {
         etGracz4.visibility = View.INVISIBLE
         imionaGraczyZatwierdz.visibility = View.INVISIBLE
         zatwierdz.setOnClickListener(View.OnClickListener { view -> zatwierdzenie() })
-
+        imionaGraczyZatwierdz.setOnClickListener(View.OnClickListener { view -> zatwierdzImiona() })
         liczbaGraczy.setOnFocusChangeListener(OnFocusChangeListener { view, b -> pobierzLiczbe(b) })
     }
 
@@ -68,35 +70,39 @@ class CardsActivity : AppCompatActivity() {
                     2-> {
                         etGracz1.visibility = View.VISIBLE
                         etGracz2.visibility = View.VISIBLE
-                        listaImion.clear()
-                        listaImion.add(etGracz1.text.toString())
-                        listaImion.add(etGracz2.text.toString())
+                        etGracz3.visibility = View.INVISIBLE
+                        etGracz4.visibility = View.INVISIBLE
+//                        listaImion.clear()
+//                        listaImion.add(etGracz1.text.toString())
+//                        listaImion.add(etGracz2.text.toString())
+//                        Log.d(TAG, listaImion.toString())
                     }
                     3-> {
                         etGracz1.visibility = View.VISIBLE
                         etGracz2.visibility = View.VISIBLE
                         etGracz3.visibility = View.VISIBLE
-                        listaImion.clear()
-                        listaImion.add(etGracz1.text.toString())
-                        listaImion.add(etGracz2.text.toString())
-                        listaImion.add(etGracz3.text.toString())
+                        etGracz4.visibility = View.INVISIBLE
+//                        listaImion.clear()
+//                        listaImion.add(etGracz1.text.toString())
+//                        listaImion.add(etGracz2.text.toString())
+//                        listaImion.add(etGracz3.text.toString())
+//                        Log.d(TAG, listaImion.toString())
                     }
                     else -> {
                         etGracz1.visibility = View.VISIBLE
                         etGracz2.visibility = View.VISIBLE
                         etGracz3.visibility = View.VISIBLE
                         etGracz4.visibility = View.VISIBLE
-                        listaImion.clear()
-                        listaImion.add(etGracz1.text.toString())
-                        listaImion.add(etGracz2.text.toString())
-                        listaImion.add(etGracz3.text.toString())
-                        listaImion.add(etGracz4.text.toString())
+//                        listaImion.clear()
+//                        listaImion.add(etGracz1.text.toString())
+//                        listaImion.add(etGracz2.text.toString())
+//                        listaImion.add(etGracz3.text.toString())
+//                        listaImion.add(etGracz4.text.toString())
+//                        Log.d(TAG, listaImion.toString())
                     }
                 }
-                imionaGraczyZatwierdz.setOnClickListener(View.OnClickListener { view -> zatwierdzImiona() })
-                var toast: Toast
-                toast = Toast.makeText(applicationContext, liczbaGraczyInt.toString(), Toast.LENGTH_SHORT)
-                toast.show()
+
+
             }
             else{
                 var toast: Toast
@@ -104,7 +110,6 @@ class CardsActivity : AppCompatActivity() {
                 toast.show()
             }
         }
-
     }
 
     fun pobierzLiczbe(prawda:Boolean){
@@ -133,7 +138,7 @@ class CardsActivity : AppCompatActivity() {
 //        var curFragment = fragment
 //    }
     private fun zatwierdzImiona() {
-
+        liczbaGraczyInt?.let { addPlayers(it) }
         var intent: Intent
         intent = Intent(this, ScoresActivity::class.java)
         intent.putExtra("Imiona",listaImion)
@@ -141,5 +146,54 @@ class CardsActivity : AppCompatActivity() {
         startActivity(intent)
 
         //intent = Intent(this,)
+    }
+    fun addPlayers(ilosc : Int){
+        liczbaGraczyInt=ilosc
+        //imionaGraczyZatwierdz.visibility = View.VISIBLE
+        if(liczbaGraczyInt!! >=2 && liczbaGraczyInt!!<5){
+            when(liczbaGraczyInt){
+                2-> {
+//                    etGracz1.visibility = View.VISIBLE
+//                    etGracz2.visibility = View.VISIBLE
+//                    etGracz3.visibility = View.INVISIBLE
+//                    etGracz4.visibility = View.INVISIBLE
+                    listaImion.clear()
+                    listaImion.add(etGracz1.text.toString())
+                    listaImion.add(etGracz2.text.toString())
+                    Log.d(TAG, listaImion.toString())
+                }
+                3-> {
+//                    etGracz1.visibility = View.VISIBLE
+//                    etGracz2.visibility = View.VISIBLE
+//                    etGracz3.visibility = View.VISIBLE
+//                    etGracz4.visibility = View.INVISIBLE
+                    listaImion.clear()
+                    listaImion.add(etGracz1.text.toString())
+                    listaImion.add(etGracz2.text.toString())
+                    listaImion.add(etGracz3.text.toString())
+                    Log.d(TAG, listaImion.toString())
+                }
+                else -> {
+//                    etGracz1.visibility = View.VISIBLE
+//                    etGracz2.visibility = View.VISIBLE
+//                    etGracz3.visibility = View.VISIBLE
+//                    etGracz4.visibility = View.VISIBLE
+                    listaImion.clear()
+                    listaImion.add(etGracz1.text.toString())
+                    listaImion.add(etGracz2.text.toString())
+                    listaImion.add(etGracz3.text.toString())
+                    listaImion.add(etGracz4.text.toString())
+                    Log.d(TAG, listaImion.toString())
+                }
+            }
+
+
+        }
+        else{
+            var toast: Toast
+            toast = Toast.makeText(applicationContext,"Ilość graczy musi być w przedziale 2-4", Toast.LENGTH_SHORT)
+            toast.show()
+        }
+
     }
 }

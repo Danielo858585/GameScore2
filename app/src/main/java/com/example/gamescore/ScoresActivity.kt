@@ -9,7 +9,8 @@ import java.util.logging.Logger
 class ScoresActivity : AppCompatActivity() {
     lateinit var imiona : ArrayList<String>
     var liczbaUczestnikow : Int = 0
-    final var TAG : String = "ScoresActivity"
+    final var TAG : String = "ScoresActivity SPRAWDZENIE"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scores)

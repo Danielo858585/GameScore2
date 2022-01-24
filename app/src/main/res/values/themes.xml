@@ -13,4 +13,8 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="ImionaGraczy">
+        <item name="android:width">50dp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
 </resources>
