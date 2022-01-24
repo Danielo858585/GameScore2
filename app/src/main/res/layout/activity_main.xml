@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_Hello"
+        android:layout_width="327dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="31dp"
+        android:text="@string/Powitanie"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_Menu"
+        android:layout_width="326dp"
+        android:layout_height="49dp"
+        android:text="@string/RodzajGry"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Hello" />
+
+    <ImageButton
+        android:id="@+id/ib_cards"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:contentDescription="@string/ib_cardDesc"
+        app:layout_constraintStart_toStartOf="@+id/tv_Menu"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Menu"
+        app:srcCompat="@drawable/cardsok" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

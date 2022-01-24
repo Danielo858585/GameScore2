@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">GameScore</string>
+    <string name="Powitanie">Aplikacja pomaga zapisywań liczbę zdobytych punktów w różnych grach</string>
+    <string name="RodzajGry">Wybierz rodzaj gry</string>
+    <string name="ib_cardDesc" />
+</resources>

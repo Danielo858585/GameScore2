@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CardsActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="87dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
+        android:text="Liczba graczy"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etn_liczbaGraczy"
+        android:layout_width="211dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/btn_numberPlayers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Zatwierdź"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etn_liczbaGraczy" />
+
+    <EditText
+        android:id="@+id/etn_gracz1"
+        android:layout_width="288dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:hint="Gracz 1"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_numberPlayers" />
+
+    <EditText
+        android:id="@+id/etn_gracz2"
+        android:layout_width="288dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:hint="Gracz 2"
+        android:inputType="textMultiLine"
+        app:layout_constraintTop_toBottomOf="@+id/etn_gracz1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="61dp" />
+
+    <EditText
+        android:id="@+id/etn_gracz3"
+        android:layout_width="288dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:hint="Gracz 3"
+        android:inputType="textMultiLine"
+        app:layout_constraintTop_toBottomOf="@+id/etn_gracz2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="61dp" />
+
+    <EditText
+        android:id="@+id/etn_gracz4"
+        android:layout_width="288dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:hint="Gracz 4"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etn_gracz3" />
+
+    <Button
+        android:id="@+id/btn_acceptNames"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Zatwierdź"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etn_gracz4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
