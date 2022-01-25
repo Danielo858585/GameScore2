@@ -186,8 +186,6 @@ class CardsActivity : AppCompatActivity() {
                     Log.d(TAG, listaImion.toString())
                 }
             }
-
-
         }
         else{
             var toast: Toast
