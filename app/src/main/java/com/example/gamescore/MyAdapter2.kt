@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class MyAdapter(private val player1points: ArrayList<Int>) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
+class MyAdapter2(private val player2points: ArrayList<Int>) : RecyclerView.Adapter<MyAdapter2.ViewHolder>() {
     //lateinit var tablica : ArrayList<Int>
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
@@ -23,10 +23,10 @@ class MyAdapter(private val player1points: ArrayList<Int>) : RecyclerView.Adapte
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        holder.points.text = player1points[position].toString()
+        holder.points.text = player2points[position].toString()
     }
 
-    override fun getItemCount() = player1points.size
+    override fun getItemCount() = player2points.size
 
     //https://damianchodorek.com/kurs-android-lista-siatka-recyclerview-viewholder-cardview-karty-cien-adapter-wzorzec-16/
 

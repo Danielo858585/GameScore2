@@ -8,17 +8,20 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
         android:orientation="vertical"
-        >
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.06999999">
 
         <LinearLayout
             android:id="@+id/lo_ScoreNames"
-            android:layout_width="419dp"
-            android:layout_height="632dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:columnCount="@integer/material_motion_duration_medium_1"
-            android:rowCount="@integer/material_motion_duration_medium_1"
-            android:layout_weight="8">
+            android:rowCount="@integer/material_motion_duration_medium_1">
 
             <TextView
                 android:id="@+id/tv_imie1"
@@ -40,11 +43,11 @@
 
         <LinearLayout
             android:id="@+id/lo_playersScore"
-            android:layout_width="419dp"
-            android:layout_height="632dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:columnCount="@integer/material_motion_duration_medium_1"
-            android:rowCount="@integer/material_motion_duration_medium_1"
-            android:layout_weight="8">
+            android:rowCount="@integer/material_motion_duration_medium_1">
 
             <TextView
                 android:id="@+id/tv_gracz1Punkty"
@@ -68,7 +71,7 @@
         <LinearLayout
             android:id="@+id/lo_scorePoint"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="400dp"
             android:layout_weight="2"
             android:orientation="horizontal">
 
@@ -83,7 +86,8 @@
                 android:id="@+id/rv_Gracz2ListaPuntow"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:textAlignment="center"/>
 
         </LinearLayout>
 
@@ -91,7 +95,7 @@
             android:id="@+id/lo_scoreScore"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="8"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
             <EditText
@@ -113,7 +117,15 @@
                 android:hint="Gracz2"
                 android:inputType="number"
                 android:textAlignment="center" />
+
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_acceptPlayersPoints"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:text="Zatwierdz punkty" />
 
     </LinearLayout>
 
